@@ -4,9 +4,9 @@ class CreateUsuarios < ActiveRecord::Migration[6.1]
       t.string :nome_completo
       t.string :data_nascimento
       t.string :telefone
-      t.string :cpf
+      t.string :cpf, null: false, default: '' 
       t.string :nome_completo_mae
-      t.string :password_digest
+      t.string :password_digest,null: false,default: ''
       t.string :email
 
       t.timestamps
