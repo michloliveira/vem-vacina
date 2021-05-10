@@ -1,14 +1,15 @@
 <h1>Vem Vacina</h1>
 
-
-
 <%= form_for :session,url:entrar_path,method: :post do |form|%>
 
 <%= form.label :CPF%>
 <%= form.text_field :cpf, placeholder: 'CPF'%>
 
 <%= form.label :Senha%>
-<%= form.text_field :password_digest, placeholder: 'Senha'%>
+<%= form.text_field :password, placeholder: 'Senha'%>
+
 <br><br>
 <%= form.submit 'Entrar'%>
 <%end%>
+<br><br>
+<h3><%= link_to 'Criar Usuário', new_usuario_path %></h3>
