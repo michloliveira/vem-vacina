@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h2><%=current_usuario.nome_completo%></h2>
 <h1>Vacinas</h1>
 
 <table>
@@ -30,4 +31,8 @@
 
 <br>
 
-<%= link_to 'New Vacina', new_vacina_path %>
+<%= link_to 'New Vacina', new_vacina_path %> |
+
+<%= link_to 'Dados do Usuário', usuario_path(current_usuario) %> |
+
+<%= link_to 'Sair', sair_path, method: :delete%> |

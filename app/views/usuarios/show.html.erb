@@ -27,14 +27,10 @@
 </p>
 
 <p>
-  <strong>Password digest:</strong>
-  <%= @usuario.password_digest %>
-</p>
-
-<p>
   <strong>Email:</strong>
   <%= @usuario.email %>
 </p>
 
-<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
+<%= link_to 'Editar Usuário', edit_usuario_path(@usuario) %> |
+<%= link_to 'Minhas Vacinas', vacinas_path%> |
 <%= link_to 'Sair', sair_path, method: :delete%>
