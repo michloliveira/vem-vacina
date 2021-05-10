@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_135149) do
+ActiveRecord::Schema.define(version: 2021_05_10_140722) do
 
   create_table "usuarios", force: :cascade do |t|
     t.string "nome_completo"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2021_05_10_135149) do
     t.string "nome_completo_mae"
     t.string "password_digest"
     t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "vacinas", force: :cascade do |t|
+    t.string "nome"
+    t.text "descricao"
+    t.string "data"
+    t.time "horario"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
