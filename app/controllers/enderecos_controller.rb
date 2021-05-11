@@ -18,7 +18,7 @@ class EnderecosController < ApplicationController
             flash[:success] = "Cadastrado com sucesso"
             redirect_to usuario_path(current_usuario)
         else
-            render 'root'
+            render :new, status: :unprocessable_entity
         end
     end
 

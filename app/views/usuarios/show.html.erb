@@ -32,7 +32,7 @@
 </p>
 
 
-<% if current_usuario.endereco != nil %>
+<% if @usuario.endereco != nil %>
   <p>
     <strong>CEP:</strong>
     <%= @usuario.endereco.cep %>
@@ -50,7 +50,7 @@
     <%= @usuario.endereco.logradouro %>
   </p>
   <p>
-    <strong>Commplemento:</strong>
+    <strong>Complemento:</strong>
     <%= @usuario.endereco.complemento %>
   </p>
 <% end %>

@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 2021_05_10_234653) do
     t.string "nome_completo"
     t.string "data_nascimento"
     t.string "telefone"
-    t.string "cpf"
+    t.string "cpf", default: "", null: false
     t.string "nome_completo_mae"
-    t.string "password_digest"
+    t.string "password_digest", default: "", null: false
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
