@@ -1,4 +1,4 @@
-<h2><%=current_usuario.nome_completo%></h2>
+<h2><%=@usuario.nome_completo%></h2>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -31,6 +31,32 @@
   <%= @usuario.email %>
 </p>
 
+
+<% if current_usuario.endereco != nil %>
+  <p>
+    <strong>CEP:</strong>
+    <%= @usuario.endereco.cep %>
+  </p>
+  <p>
+    <strong>Cidade:</strong>
+    <%= @usuario.endereco.cidade %>
+  </p>
+  <p>
+    <strong>Bairro:</strong>
+    <%= @usuario.endereco.bairro %>
+  </p>
+  <p>
+    <strong>Logradouro:</strong>
+    <%= @usuario.endereco.logradouro %>
+  </p>
+  <p>
+    <strong>Commplemento:</strong>
+    <%= @usuario.endereco.complemento %>
+  </p>
+<% end %>
+
+
 <%= link_to 'Editar Usuário', edit_usuario_path(@usuario) %> |
+<%= link_to 'Editar Endereco', new_endereco_path(@usuario) %> |
 <%= link_to 'Minhas Vacinas', vacinas_path%> |
 <%= link_to 'Sair', sair_path, method: :delete%>
