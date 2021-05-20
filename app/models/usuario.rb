@@ -6,7 +6,7 @@ class Usuario < ApplicationRecord
     VALID_EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
     validates :nome_completo,presence: true,length: {maximum:30}
-    validates :data_nascimento,presence: true
+    validates_date :data_nascimento,presence: true, on_or_before: lambda { Date.current }
     validates :telefone, presence: true, numericality: { only_integer: true } ,length: {minimum: 8}
     validates :cpf, presence: true, numericality: { only_integer: true } , length: {is:11}, uniqueness: true
     validates :nome_completo_mae, presence:true
