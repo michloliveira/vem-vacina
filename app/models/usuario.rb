@@ -3,9 +3,15 @@ class Usuario < ApplicationRecord
     has_one :endereco
 
     has_secure_password
-    validates :nome_completo,presence: true,length: {minimum:1, maximum:30}
-    validates :password,length: {minimum:5}
-    validates :email,presence: true,length: {maximum:100}
+    VALID_EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
+    validates :nome_completo,presence: true,length: {maximum:30}
+    validates :data_nascimento,presence: true
+    validates :telefone, presence: true, numericality: { only_integer: true } ,length: {minimum: 8}
+    validates :cpf, presence: true, numericality: { only_integer: true } , length: {is:11}, uniqueness: true
+    validates :nome_completo_mae, presence:true
+    validates :password,length: {minimum:5}
+    validates :email, presence: true, length:{maximum: 255}, format:{with: VALID_EMAIL_REGEX}, uniqueness:{case_sensitive: true}
+    
     accepts_nested_attributes_for :endereco, update_only: true
 end
