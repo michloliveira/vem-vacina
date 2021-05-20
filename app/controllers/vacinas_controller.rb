@@ -6,9 +6,7 @@ class VacinasController < ApplicationController
   def index
     @vacinas = current_usuario.vacinas
     #@vacinas = Vacina.all
-    if current_usuario.endereco == nil
-      redirect_to new_endereco_path ,notice: "Você deve criar um endereço."
-    end
+    
   end
 
   # GET /vacinas/1 or /vacinas/1.json

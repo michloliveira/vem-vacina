@@ -13,6 +13,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios/new
   def new
     @usuario = Usuario.new
+    @usuario.build_endereco
   end
 
   # GET /usuarios/1/edit
@@ -22,7 +23,7 @@ class UsuariosController < ApplicationController
   # POST /usuarios or /usuarios.json
   def create
     @usuario = Usuario.new(usuario_params)
-
+    #0,@usuario.build_endereco(params[:id])
     respond_to do |format|
       if @usuario.save
         format.html { redirect_to @usuario, notice: "Usuario was successfully created." }
@@ -64,6 +65,6 @@ class UsuariosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def usuario_params
-      params.require(:usuario).permit(:nome_completo, :data_nascimento, :telefone, :cpf, :nome_completo_mae, :password, :email)
+      params.require(:usuario).permit(:nome_completo, :data_nascimento, :telefone, :cpf, :nome_completo_mae, :password, :email, {:endereco_attributes => [:id, :cep, :cidade, :bairro, :logradouro, :complemento]})
     end
 end

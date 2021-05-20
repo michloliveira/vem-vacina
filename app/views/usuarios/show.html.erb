@@ -31,8 +31,6 @@
   <%= @usuario.email %>
 </p>
 
-
-<% if @usuario.endereco != nil %>
   <p>
     <strong>CEP:</strong>
     <%= @usuario.endereco.cep %>
@@ -53,10 +51,9 @@
     <strong>Complemento:</strong>
     <%= @usuario.endereco.complemento %>
   </p>
-<% end %>
+
 
 
 <%= link_to 'Editar Usuário', edit_usuario_path(@usuario) %> |
-<%= link_to 'Editar Endereco', new_endereco_path(@usuario) %> |
 <%= link_to 'Minhas Vacinas', vacinas_path%> |
 <%= link_to 'Sair', sair_path, method: :delete%>
