@@ -3,7 +3,7 @@ class CreateVacinas < ActiveRecord::Migration[6.1]
     create_table :vacinas do |t|
       t.string :nome
       t.text :descricao
-      t.string :data
+      t.date :data
       t.time :horario
 
       t.timestamps

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_004211) do
 
   create_table "usuarios", force: :cascade do |t|
     t.string "nome_completo"
-    t.string "data_nascimento"
+    t.date "data_nascimento"
     t.string "telefone"
     t.string "cpf", default: "", null: false
     t.string "nome_completo_mae"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_004211) do
   create_table "vacinas", force: :cascade do |t|
     t.string "nome"
     t.text "descricao"
-    t.string "data"
+    t.date "data"
     t.time "horario"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

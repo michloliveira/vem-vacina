@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :data_nascimento %>
-    <%= form.text_field :data_nascimento %>
+    <%= form.date_select(:data_nascimento ,:start_year => 1920, :end_year => 2021) %>
   </div>
 
   <div class="field">
