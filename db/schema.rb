@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_004211) do
     t.time "horario"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "usuario_id", null: false
+    t.integer "usuario_id"
     t.index ["usuario_id"], name: "index_vacinas_on_usuario_id"
   end
 
