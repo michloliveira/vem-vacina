@@ -10,7 +10,7 @@ class Usuario < ApplicationRecord
     validates :telefone, presence: true, numericality: { only_integer: true } ,length: {minimum: 8}
     validates :cpf, presence: true, numericality: { only_integer: true } , length: {is:11}, uniqueness: true
     validates :nome_completo_mae, presence:true
-    validates :password,length: {minimum:5}
+    validates :password,length: {minimum:8}
     validates :email, presence: true, length:{maximum: 255}, format:{with: VALID_EMAIL_REGEX}, uniqueness:{case_sensitive: true}
     
     accepts_nested_attributes_for :endereco, update_only: true
