@@ -21,9 +21,9 @@
         <td><%= vacina.descricao %></td>
         <td><%= vacina.data %></td>
         <td><%= vacina.horario %></td>
-        <td><%= link_to 'Show', vacina %></td>
-        <td><%= link_to 'Edit', edit_vacina_path(vacina) %></td>
-        <td><%= link_to 'Destroy', vacina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show',vacina,id:"s-#{vacina.nome}" %></td>
+        <td><%= link_to 'Edit',edit_vacina_path(vacina),id:"e-#{vacina.nome}" %></td>
+        <td><%= link_to 'Destroy',vacina, method: :delete, data: { confirm: 'Are you sure?' },id:"d-#{vacina.nome}" %></td>
       </tr>
     <% end %>
   </tbody>
