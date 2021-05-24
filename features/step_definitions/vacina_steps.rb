@@ -38,3 +38,27 @@ end
 Then('eu vejo que um agendamento de vacina com o nome {string} foi criado') do |string|
     expect(page).to have_content(string)
 end
+
+Given('existe uma agendamento com o nome {string}') do |string|
+    visit '/vacinas/new'
+    fill_in 'vacina_nome',	with: string
+    fill_in 'vacina_descricao',	with: 'Na rua Santos Dumont, UBS centro'
+    select '22', :from => 'vacina_data_3i' #dia
+    select 'October', :from => 'vacina_data_2i' #mes
+    select '2021', :from => 'vacina_data_1i' #ano
+    select '15', from: 'vacina_horario_4i'#hora
+    select '45', from: 'vacina_horario_5i'#minutos
+    click_on 'Create Vacina'
+    click_on 'Back'
+end
+And ('eu clico em editar um agendamento com o nome {string}') do |string|
+    click_link "e-#{string}"
+end
+When('atualizo o campo hora para {string}:{string}') do |string, string2|
+    select string, from: 'vacina_horario_4i'#hora
+    select string2, from: 'vacina_horario_5i'#minutos
+    click_on 'Update Vacina'
+end
+Then('eu vejo que a vacina com o nome {string} foi atualizada') do |string|
+    expect(page).to have_content(string)
+end
