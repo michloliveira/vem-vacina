@@ -66,3 +66,9 @@ end
 Then('eu vejo uma mensagem de erro') do
     assert_selector('div#error_explanation',text:'')
 end
+
+When('atualizo o campo data para {string}\/{string}\/{string}') do |string, string2, string3|
+    select string, from: 'vacina_horario_4i'#hora
+    select string2, from: 'vacina_horario_5i'#minutos
+    click_on 'Update Vacina'
+end
