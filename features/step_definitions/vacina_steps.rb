@@ -62,3 +62,7 @@ end
 Then('eu vejo que a vacina com o nome {string} foi atualizada') do |string|
     expect(page).to have_content(string)
 end
+
+Then('eu vejo uma mensagem de erro') do
+    assert_selector('div#error_explanation',text:'')
+end
